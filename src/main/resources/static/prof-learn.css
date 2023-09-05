@@ -1,0 +1,39 @@
+body{
+    margin: 0px;
+    padding: 0px;
+    display: block;
+    background-color: #dedecf;
+}
+
+li{
+    display: inline-block;
+    margin: 0em auto 0em auto;
+    padding: 0;
+}
+
+ul{
+    margin: 0 auto 0 auto;
+    padding: 1.5%;
+}
+
+.header{
+    height: 4%;
+    width: 100%;
+    margin: 0%;
+    padding: 0%;
+    background-color: green;
+    position: sticky;
+    top: 0;
+}
+
+.a1{
+    padding: 0em 1em 0em 1em;
+    color: white;
+    text-decoration: none;
+    font-size: 20px;
+}
+
+.a1:hover{
+    color: #c20808;
+}
+

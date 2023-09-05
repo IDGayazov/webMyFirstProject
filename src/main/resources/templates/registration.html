@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:th="https://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Страница регистрации</title>
+    <link rel="stylesheet" href="/log.css"/>
+</head>
+<body>
+          <div class="header">
+            <ul>
+              <li>
+                <a class="a1" href="/main">Главная страница</a>
+              </li>
+            </ul>
+          </div>
+
+          <h1>Регистрация</h1>
+          <p style="margin: 3em auto -2em 15em; padding: 3em auto -2em 15em; color: red; font-size:26px;" th:text="${message}"></p>
+          <div class="d2">
+              <form th:action="@{/registration}" th:object="${user}" th:method="post">
+                <div class="d1"><input class="i1"  type="text" th:field="*{login}" placeholder="login" name="login"/></div>
+                  <div>
+                      <label th:if="${#fields.hasErrors('login')}" th:errors="*{login}" style="color: red;">Введите корректный адрес изображения</label>
+                  </div>
+                <div class="d4"><input class="i1" type="text" th:field="*{email}" placeholder="email" name="email"/></div>
+                  <div>
+                      <label th:if="${#fields.hasErrors('email')}" th:errors="*{email}" style="color: red;">Введите корректный адрес изображения</label>
+                  </div>
+                  <div class="d4"><input class="i1" pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{6,}" type="password" th:field="*{password}" placeholder="password" name="password"/></div>
+                  <div>
+                      <label th:if="${#fields.hasErrors('password')}" th:errors="*{password}" style="color: red;">Введите корректный адрес изображения</label>
+                  </div>
+                  <div class="d5"><input class="i1" type="submit" value="Зарегистрироваться"/></div>
+              </form>
+          </div>
+
+
+</body>
+
+</html>

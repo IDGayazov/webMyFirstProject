@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en" >
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>admin</title>
+    <link rel="stylesheet" href="/admin.css"/>
+</head>
+<body>
+
+    <div class="header">
+        <ul>
+            <li>
+                <form th:action="@{/logout}" method="post">
+                    <a class="a1" href="/logout">Выйти</a>
+                </form>
+            </li>
+        </ul>
+    </div>
+
+    <h1 style="margin: 1em 1em 0 2em; font-size: 26px;">Добавление карточки</h1>
+    <p style="margin: 2em auto 1em 15em; padding: 2em auto 1em 15em; color: red; font-size:26px;" th:text="${message}"></p>
+    <div class="pg">
+        <form th:action="@{/admin/add}" th:object="${card}" th:method="post">
+            <div class="text-holder">
+                <textarea type="text" placeholder="Добавьте текст на татарском языке" class="txt1" th:field="*{tat}" name="tat"></textarea>
+            </div>
+            <hr/>
+            <div th:if="${#fields.hasErrors('tat')}" th:errors="*{tat}" style="color: red">
+                    Введите корректное наименование
+            </div>
+            <label style="font-size: 20px; font-family: Verdana; color: #bdbdbd;">Наименование</label>
+            <div class="text-holder1">
+                <textarea type="text" placeholder="Добавьте текст на русском языке" class="txt1" th:field="*{rus}" name="rus"></textarea>
+            </div>
+            <hr/>
+            <div>
+                <label th:if="${#fields.hasErrors('rus')}" th:errors="*{rus}" style="color: red;">Введите корректный перевод</label>
+            </div>
+            <label style="font-size: 20px; font-family: Verdana; color: #bdbdbd;">Перевод</label>
+            <div class="text-holder1">
+                <textarea type="text" placeholder="Добавьте ссылку на изображение" class="txt1" th:field="*{image}" name="image"></textarea>
+            </div>
+            <hr/>
+            <div>
+                <label th:if="${#fields.hasErrors('image')}" th:errors="*{image}" style="color: red;">Введите корректный адрес изображения</label>
+            </div>
+            <label style="font-size: 20px; font-family: Verdana; color: #bdbdbd;">Изображение</label>
+            <div class="text-holder1">
+                <textarea type="text" placeholder="Добавьте тег" class="txt1" th:field="*{tag}" name="tag"></textarea>
+            </div>
+            <hr/>
+            <div style="bottom-padding: -2em; margin: 0 0 -1em 0;">
+                <label th:if="${#fields.hasErrors('tag')}" th:errors="*{tag}" style="color: red; bottom-padding: -2em; bottom-margin: -4em;">Введите корректный тег</label>
+            </div>
+            <label style="font-size: 20px; font-family: Verdana; color: #bdbdbd;">Тег</label>
+    <!--        <div class="thrd">-->
+    <!--            <label style="margin: 3em 3em 3em 3em; padding: 3em 3em 3em 3em;">Изображение</label>-->
+    <!--        </div>-->
+            <button type="submit" class="btn_style">Добавить</button>
+        </form>
+    </div>
+
+    <h1 style="margin: 1em 1em 1em 2em; font-size: 26px;">Редактирование карточки</h1>
+    <div class="pg1">
+        <form class="frm" th:action="@{/admin/search}" th:method="get">
+            <input class="inpt" name="word" placeholder="Введите слово или перевод...">
+            <button class="btn" type="submit">Найти</button>
+        </form>
+
+        <table class="animals">
+            <tr class="align">
+                <td class="list-item" th:each="el: ${cards}">
+                    <a th:href="'/admin/' + ${el.id} + ''" type="submit" style="color: black;">
+                        <figure class="cards" type="submit">
+                            <img  th:src=${el.image} class="images">
+                            <figcaption th:text="${el.rus}" class="words"></figcaption>
+                            <figcaption th:text="${el.tat}" class="words"></figcaption>
+                        </figure>
+                    </a>
+                </td>
+            </tr>
+        </table>
+
+    </div>
+
+</body>
+</html>

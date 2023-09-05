@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Страница пользователя</title>
+    <link rel="stylesheet" href="/prof.css">
+</head>
+<body>
+
+    <div class="header">
+        <ul>
+            <li>
+                <a class="a1" href="#">Главная страница</a>
+            </li>
+            <li>
+                <form th:action="@{/logout}" method="post">
+                    <a class="a1" href="/logout">Выйти</a>
+                </form>
+            </li>
+        </ul>
+    </div>
+
+    <h1 class="word1">Мой профиль</h1>
+    <div class="prof">
+
+        <div class="word2">
+            <article class="item">
+                <p class="leftContent">Логин:</p>
+                <p class="rightContent" th:text="${login}"></p>
+            </article>
+            <article class="item">
+                <p class="leftContent">Email:</p>
+                <p class="rightContent" th:text="${email}"></p>
+            </article>
+        </div>
+
+        <figure class="fig">
+            <image class="img" src="https://avatars.mds.yandex.net/i?id=37b93a33d30ec748e9c2271b9d768a55e86e145d-8232745-images-thumbs&n=13"></image>
+            <figcaption style="margin-left: 2.6em; font-size: 26px;" th:text="${learned}"></figcaption>
+            <figcaption style="margin-left: 1.3em; font-size: 26px;">Выучено</figcaption>
+        </figure>
+
+        <figure class="fig">
+            <image class="img" src="https://avatars.mds.yandex.net/i?id=15070ec4447d0f3a1575af0a532e4caa2ad72585-9231626-images-thumbs&n=13"></image>
+            <figcaption style="margin-left: 2.6em; font-size: 26px;" th:text="${process}"></figcaption>
+            <figcaption style="margin-left: 0.7em; font-size: 26px;">В процессе</figcaption>
+        </figure>
+
+        <figure class="fig">
+            <image class="img" src="https://avatars.mds.yandex.net/i?id=6440c322ca3a656721ef5cdbdea1d180d69339c3-5329285-images-thumbs&n=13"></image>
+            <figcaption style="margin-left: 2.6em; font-size: 26px;" th:text="${today}"></figcaption>
+            <figcaption style="margin-left: 1.3em; font-size: 26px;">Сегодня</figcaption>
+        </figure>
+    </div>
+
+    <div class="help">
+        <ul>
+            <li>
+                <h1 style="margin: 1em 1em 1em 2em; font-size: 26px;">Мои карточки</h1>
+            </li>
+            <li>
+                <form th:action="@{/profile/add}" th:method="get">
+                    <button type="submit" class="btn_style">Добавить</button>
+                </form>
+            </li>
+            <li>
+                <form th:action="@{/profile/learn}" th:method="get">
+                    <button type="submit" class="btn_style">Учить</button>
+                </form>
+            </li>
+        </ul>
+    </div>
+
+    <div class="pg1">
+            <form class="frm" th:action="@{/profile/search}" th:method="get">
+                <input class="inpt" name="word" placeholder="Введите слово или перевод...">
+                <button class="btn" type="submit">Найти</button>
+            </form>
+
+        <table class="animals">
+            <tr class="align">
+                <td class="list-item" th:each="el: ${cards}">
+                    <a th:href="'/profile/' + ${el.id} + ''" type="submit" style="color: black;">
+                        <figure class="cards" type="submit">
+                            <img  th:src=${el.image} class="images">
+                            <figcaption th:text="${el.rus}" class="words"></figcaption>
+                            <figcaption th:text="${el.tat}" class="words"></figcaption>
+                        </figure>
+                    </a>
+                </td>
+            </tr>
+        </table>
+    </div>
+
+<!--    <article class="item">-->
+<!--        <p>Вы посетили этот сайт <strong th:text="${count}"></strong> раз(а).</p>-->
+<!--    </article>-->
+<!--    <h1 style="margin: 1em 1em 1em 2em; font-size: 26px;">Статистика</h1>-->
+<!--    <div class="pg3">-->
+
+<!--    </div>-->
+
+</body>
+</html>

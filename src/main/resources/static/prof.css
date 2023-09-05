@@ -1,0 +1,234 @@
+body{
+    margin: 0px;
+    padding: 0px;
+    display: block;
+    background-color: #dedecf;
+}
+
+li{
+    display: inline-block;
+    margin: 0em auto 0em auto;
+    padding: 0;
+}
+
+ul{
+    margin: 0 auto 0 auto;
+    padding: 1.5%;
+}
+
+.header{
+    height: 4%;
+    width: 100%;
+    margin: 0%;
+    padding: 0%;
+    background-color: green;
+    position: sticky;
+    top: 0;
+}
+
+.a1{
+    padding: 0em 1em 0em 1em;
+    color: white;
+    text-decoration: none;
+    font-size: 20px;
+}
+
+.a1:hover{
+    color: #c20808;
+}
+
+.prof{
+    margin: 3em auto auto auto;
+    padding:  3em auto auto auto;
+    height: 27em;
+    width: 92%;
+    background-color: white;
+    border-radius: 20px;
+}
+
+form{
+    padding: 0;
+    margin: 0;
+}
+
+.word1{
+    margin: 1em auto -1em 2.3em;
+    padding: 1em auto -1em 2.3em;
+    padding-top: 1em;
+    font-size: 26px;
+}
+
+.word2{
+    margin: 0 auto auto 2em;
+    padding: 0 auto auto 2em;
+    padding-top: 30px;
+    font-size: 26px;
+}
+
+p{
+  text-align: left;
+}
+.item p{
+    padding-top: 0;
+    margin-top: 0;
+    display: inline-block;
+}
+.leftContent{
+    text-align: left;
+    width: 30%;
+}
+.rightContent{
+    text-align: right;
+    width: 30%
+}
+
+.img{
+    width: 10em;
+    height: 10em;
+    border-radius: 7px 7px 7px 7px;
+}
+
+.fig{
+    display: inline-block;
+    margin: 0 0 0 12em;
+}
+
+.pg1{
+    margin-left: 1.5em;
+    padding-left: 1.5em;
+}
+
+.inpt {
+  width: 100%;
+  height: 42px;
+  border: 2.5px solid green;
+  border-radius: 5px;
+  outline: none;
+  font-size: 20px;
+  background: #F9F0DA;
+  color: black;
+  padding-left: 10px;
+}
+
+.btn {
+  position: absolute;
+  top: 0;
+  right: -18px;
+  width: 7em;
+  height: 46px;
+  border: none;
+  background: green;
+  border-radius: 0 5px 5px 0;
+  cursor: pointer;
+  font-size: 20px;
+  color: white;
+}
+
+btn:before {
+  content: "\f002";
+  font-family: FontAwesome;
+  font-size: 26px;
+  color: green;
+  padding-left: 10px;
+}
+
+.frm {
+  position: relative;
+  width: 50em;
+  height: 15em;
+  margin: 0 auto -10em 5em;
+}
+
+.animals{
+    display: block;
+    overflow-x: auto;
+    white-space: nowrap;
+    scroll-snap-type: x mandatory;
+    -webkit-overflow-scrolling: touch;
+    overflow: hidden;
+    height: 24em;
+    background-color: white;
+    border-radius: 20px;
+    width: 96%;
+    margin-left: 3em;
+    padding-left: 3em;
+}
+
+.pg3{
+    width: 92%;
+    height: 30em;
+    background-color: white;
+    border-radius: 20px;
+    margin: 3em auto auto auto;
+    padding:  3em auto auto auto;
+}
+
+.help{
+    display: inline;
+}
+
+.btn_style{
+    align: right;
+    background-color: green;
+    color: white;
+    font-size: 20px;
+    border-radius: 5px;
+    width: 10em;
+    padding:0;
+    margin:0;
+    border-style: none;
+}
+
+.cards{
+    background: #b8fbd0;
+    padding: 0em 0em 1em 0em;
+    display: block;
+    width: 17em;
+    float: left;
+    margin: 1em 0.5em 1em 1em;
+    border-radius: 30px;
+    cursor: pointer;
+    text-align: center;
+    left: 5em;
+    transition: 1s;
+}
+
+.cards:hover{
+    transform: scale(1.05);
+}
+
+.cards1:hover{
+    transform: scale(1.05);
+}
+
+.images{
+    width: 17em;
+    height: 250px;
+    padding: 0 0 1% 0;
+    border-radius: 30px 30px 0 0;
+    margin: 0;
+}
+
+.align{
+    scroll-snap-align: start;
+}
+
+.animals{
+    display: block;
+    overflow-x: auto;
+    white-space: nowrap;
+    scroll-snap-type: x mandatory;
+    -webkit-overflow-scrolling: touch;
+    overflow: hidden;
+    margin: 0;
+    padding: 0;
+}
+
+.words{
+    font-size: 20px;
+}
+
+.test{
+    margin: 0 0 0 2em;
+
+}

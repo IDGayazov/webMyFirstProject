@@ -1,0 +1,165 @@
+body{
+    margin: 0px;
+    padding: 0px;
+    display: block;
+}
+/*
+::-webkit-scrollbar { width: 0;}
+*/
+li{
+    display: inline;
+    margin: 0em auto 1em auto;
+    padding: 0;
+}
+
+ul{
+    margin: 0 auto 0 auto;
+    padding: 1.5%;
+}
+
+.header{
+    height: 4%;
+    width: 100%;
+    margin: 0%;
+    padding: 0%;
+    background-color: green;
+    position: sticky;
+    top: 0;
+}
+
+.a1{
+    padding: 0em 1em 0em 1em;
+    color: white;
+    text-decoration: none;
+    font-size: 20px;
+}
+.a1:hover{
+    color: #c20808;
+}
+
+.tatimg{
+    width: 100%;
+    heigth: 50%;
+}
+
+.head-words{
+    position: absolute;
+    top: 30%;
+    right: 35%;
+    font-size: 36px;
+    color: white;
+    font-weight: bold;
+}
+
+.wrapper {
+    display: block;
+    background-image: linear-gradient(rgba(0,0,0,0.4), rgba(0,0,0,0.4)), url(https://postnauka.ru/files/images/7/7/6/6/1/0/0/0/0/0/r_eRxgqy1JUROi536nSnKkRnVwj-wRwL.jpg);
+    background-size: 100% 25em;
+    background-repeat: no-repeat;
+    min-height: 25em;
+    bottom: 0;
+}
+
+.bottom{
+    background-color: #dedecf;
+    top: 0;
+    bottom: 0;
+    margin: 0;
+    padding: 1px;
+    min-height: 100em;
+}
+
+.tag-names1{
+    font-size: 26px;
+    font-family: VERDANA;
+    color: black;
+    padding: 1em 16em 1em 20em;
+    margin: 0;
+}
+
+.tag-names2{
+    font-size: 20px;
+    font-family: VERDANA;
+    color: black;
+    padding: 1em 50em 1em 5em;
+}
+
+.cards{
+    background: white;
+    padding: 0em 0em 1em 0em;
+    display: block;
+    width: 17em;
+    float: left;
+    margin: 1em 0.5em 1.5em 2.5em;
+    border-radius: 30px;
+    cursor: pointer;
+    text-align: center;
+    left: 5em;
+    transition: 1s;
+}
+
+.cards1{
+    background: white;
+    padding: 0em 0em 1em 0em;
+    display: block;
+    width: 17em;
+    float: left;
+    margin: 1em 0.5em 1em 5em;
+    border-radius: 30px;
+    cursor: pointer;
+    text-align: center;
+    left: 5em;
+    transition: 1s;
+}
+
+.cards:hover{
+    transform: scale(1.05);
+}
+
+.cards1:hover{
+    transform: scale(1.05);
+}
+
+.images{
+    width: 17em;
+    height: 250px;
+    padding: 0 0 1% 0;
+    border-radius: 30px 30px 0 0;
+    margin: 0;
+}
+
+.words{
+    font-size: 20px;
+}
+
+.align{
+/*
+    overflow-x: auto;
+    display: flex;
+    scroll-snap-type: x mandatory;
+    gap: 1rem;
+    scroll-padding: 48px;
+    padding-bottom: 5px;
+    -webkit-overflow-scrolling: touch;
+    overflow-y: hidden;
+    overflow: hidden;
+    display: inline-block;
+
+    scroll-snap-align: start;
+    */
+}
+
+table td {
+    display:inline-block;
+}
+
+.animals{
+    display: block;
+    /*
+    overflow-x: auto;
+    white-space: nowrap;
+    scroll-snap-type: x mandatory;
+    -webkit-overflow-scrolling: touch;
+    overflow: hidden;
+    */
+}

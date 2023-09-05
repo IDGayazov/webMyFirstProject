@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:th="https://www.thymeleaf.org">
+<head>
+  <meta charset="UTF-8">
+  <title>Страница авторизации</title>
+  <link rel="stylesheet" href="/log.css"/>
+</head>
+<body>
+        <div class="header">
+          <ul>
+            <li>
+              <a class="a1" href="/main">Главная страница</a>
+            </li>
+          </ul>
+        </div>
+
+        <h1>Авторизация</h1>
+
+        <div th:if="${param.error}" style="margin: 3em auto -4em 35em; padding: 3em auto -4em 35em; color: red; font-size: 16px;">
+            Invalid username and password.
+        </div>
+        <div th:if="${param.logout}" style="margin: 3em auto -4em 37em; padding: 3em auto -4em 37em; color: red; font-size: 16px;">
+            You have been logged out.
+        </div>
+
+        <div class="d2">
+            <form th:action="@{/login}" method="post">
+              <div class="d1"><input class="i1" type="text" placeholder="login/email" name="username"/></div>
+              <div class="d4"><input class="i1" type="password" placeholder="password" name="password"/></div>
+                <div class="d3"><input class="i2" type="submit" value="Войти"/></div>
+            </form>
+            <form class="dep" th:action="@{/registration}">
+                <button style="padding: 0 auto auto 0em; margin: 0 auto auto 0em; height: 3em; width: 16em; border-radius: 10px; font-size: 16px;border-style: none;"
+                        th:href="@{/registration}">Регистрация</button>
+            </form>
+        </div>
+</body>
+</html>

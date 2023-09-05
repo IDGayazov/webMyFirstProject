@@ -1,0 +1,115 @@
+body{
+    margin: 0px;
+    padding: 0px;
+    display: block;
+    background-color: #dedecf;
+}
+
+li{
+    display: inline;
+    margin: 0em auto 1em auto;
+    padding: 0;
+}
+
+ul{
+    margin: 0 auto 0 auto;
+    padding: 1.5%;
+}
+
+.header{
+    height: 4%;
+    width: 100%;
+    margin: 0%;
+    padding: 0%;
+    background-color: green;
+    position: sticky;
+    top: 0;
+}
+
+.a1{
+    padding: 0em 1em 0em 1em;
+    color: white;
+    text-decoration: none;
+    font-size: 20px;
+}
+.a1:hover{
+    color: #c20808;
+}
+
+h1{
+    padding: 1em auto -1em 18em;
+    margin: 1em auto -1em 18em;
+}
+
+form{
+    padding: 5em auto 2em 7em;
+    margin: 5em auto 2em 7em;
+}
+
+.dep{
+    padding: 4em auto auto 7em;
+    margin: 4em auto auto 7em;
+    height: 3em;
+    width: 16em;
+    border-radius: 10px;
+    font-size: 16px;
+    border-style: none;
+}
+
+.a1{
+    padding: 0 auto 0em 0em;
+    color: white;
+    text-decoration: none;
+    font-size: 20px;
+}
+
+.a1:hover{
+    color: #c20808;
+}
+
+.d1{
+    padding: 3em 2em 0 0;
+    margin: 3em 2em 0 0;
+}
+
+.d4{
+    padding: 1em 3em 0 0;
+    margin: 1em 3em 0 0;
+}
+
+.i1{
+    height: 3em;
+    width: 14.5em;
+    border-radius: 10px;
+    font-size: 16px;
+    padding-left: 20px;
+    border-style: none;
+}
+
+.d2{
+    height: 28em;
+    width: 30em;
+    padding: 2em auto auto 27em;
+    margin: 2em auto auto 27em;
+    background-color: green;
+    border-radius: 20px;
+}
+
+.d3{
+    padding: 3em auto auto 4em;
+    margin: 3em auto auto 4em;
+}
+
+.i2{
+    border-radius: 10px;
+    height: 2em;
+    width: 8em;
+    font-size: 16px;
+    border-style: none;
+}
+
+.d5{
+    padding: 3em auto auto 0.8em;
+    margin: 3em auto auto 0.8em;
+}
+

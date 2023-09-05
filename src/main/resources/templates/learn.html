@@ -1,0 +1,247 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Учить карточки</title>
+    <link rel="stylesheet" href="/prof.css">
+</head>
+<body>
+            <div class="header">
+              <ul>
+                <li>
+<!--                  <form th:action="@{/profile}" method="get">-->
+                    <a class="a1" href="/profile">Назад</a>
+<!--                  </form>-->
+                </li>
+              </ul>
+            </div>
+
+            <h1 style="margin: 1em 1em 1em 2em; font-size: 26px;">Изучение слов из определенного тега</h1>
+
+            <div>
+                <form class="frm" th:action="@{/profile/learn/search}" th:method="get">
+                    <input class="inpt" name="tag" placeholder="Введите тег..."/>
+                    <button class="btn" type="submit">Найти</button>
+                </form>
+            </div>
+<div>
+<!--            <form th:action="@{/profile/learn/search}" th:method="post" th:if="${cards != null}" th:object="${cards}">-->
+<!--                <table class="test">-->
+<!--                        <tr class="align">-->
+<!--                            <td th:object="${form}" class="list-item" th:if="${#arrays.length(cards) >= 1}">-->
+<!--                                <figure th:object="${cards[0]}" class="cards" type="submit">-->
+<!--                                    <img  th:src="${cards[0].image}" name="cards[0].image" class="images">-->
+<!--                                    <figcaption th:text="${cards[0].tat}" name="cards[0].tat" class="words"></figcaption>-->
+<!--                                    <input hidden name="cards[0].image" th:value="${cards[0].image}" class="words"/>-->
+<!--                                    <input hidden name="cards[0].tat" th:value="${cards[0].tat}" class="words"/>-->
+<!--                                    <input hidden name="cards[0].tag" th:value="${cards[0].tag}" class="words"/>-->
+<!--                                    <input hidden name="cards[0].isGlobal" th:value="${cards[0].isGlobal}" class="words"/>-->
+<!--                                    <input th:field="*{rus}" name="rus" class="words"/>-->
+<!--                                </figure>-->
+<!--                                <input hidden th:value="${cards[0].id}" name="card1"/>-->
+<!--                            </td>-->
+<!--                            <td th:object="${form}" class="list-item" th:if="${#arrays.length(cards) >= 2}">-->
+<!--                                <figure th:object="${cards[1]}"  class="cards" type="submit">-->
+<!--                                    <img  th:src="${cards[1].image}" name="cards[1].image" class="images">-->
+<!--                                    <figcaption th:text="${cards[1].tat}" name="cards[1].tat" class="words"></figcaption>-->
+<!--                                    <input hidden name="cards[1].image" th:value="${cards[1].image}" class="words"/>-->
+<!--                                    <input hidden name="cards[1].tat" th:value="${cards[1].tat}" class="words"/>-->
+<!--                                    <input hidden name="cards[1].tag" th:value="${cards[1].tag}" class="words"/>-->
+<!--                                    <input hidden name="cards[1].isGlobal" th:value="${cards[1].isGlobal}" class="words"/>-->
+<!--                                    <input th:field="*{rus}" name="rus" class="words"/>-->
+<!--                                </figure>-->
+<!--                                <input hidden name="card2" th:value="${cards[1].id}"/>-->
+<!--                            </td>-->
+<!--                        </tr>-->
+<!--                </table>-->
+<!--                <button type="submit" th:name="${cards}">Проверить</button>-->
+<!--            </form>-->
+<!--    <form th:action="@{/profile/learn/search}" th:method="post" th:if="${cards != null}" th:object="${form}">-->
+<!--        <table class="test">-->
+<!--            <tr class="align">-->
+<!--                <td class="list-item" th:if="${#arrays.length(cards) >= 1}">-->
+<!--                    <figure th:object="${cards[0]}" class="cards" type="submit">-->
+<!--                        <img  th:src="${cards[0].image}" name="cards[0].image" class="images">-->
+<!--                        <figcaption th:text="${cards[0].tat}" name="cards[0].tat" class="words"></figcaption>-->
+<!--                        <input hidden name="cards[0].image" th:value="${cards[0].image}" class="words"/>-->
+<!--                        <input hidden name="cards[0].tat" th:value="${cards[0].tat}" class="words"/>-->
+<!--                        <input hidden name="cards[0].tag" th:value="${cards[0].tag}" class="words"/>-->
+<!--                        <input hidden name="cards[0].isGlobal" th:value="${cards[0].isGlobal}" class="words"/>-->
+<!--                        <input th:field="*{rus}" name="rus" class="words"/>-->
+<!--                    </figure>-->
+<!--                    <input hidden th:value="${cards[0].id}" name="card1"/>-->
+<!--                </td>-->
+<!--                <td class="list-item" th:if="${#arrays.length(cards) >= 2}">-->
+<!--                    <figure th:object="${cards[1]}"  class="cards" type="submit">-->
+<!--                        <img  th:src="${cards[1].image}" name="cards[1].image" class="images">-->
+<!--                        <figcaption th:text="${cards[1].tat}" name="cards[1].tat" class="words"></figcaption>-->
+<!--                        <input hidden name="cards[1].image" th:value="${cards[1].image}" class="words"/>-->
+<!--                        <input hidden name="cards[1].tat" th:value="${cards[1].tat}" class="words"/>-->
+<!--                        <input hidden name="cards[1].tag" th:value="${cards[1].tag}" class="words"/>-->
+<!--                        <input hidden name="cards[1].isGlobal" th:value="${cards[1].isGlobal}" class="words"/>-->
+<!--                        <input th:field="*{rus}" name="rus" class="words"/>-->
+<!--                    </figure>-->
+<!--                    <input hidden name="card2" th:value="${cards[1].id}"/>-->
+<!--                </td>-->
+<!--            </tr>-->
+<!--        </table>-->
+<!--        <button type="submit" th:name="${cards}">Проверить</button>-->
+<!--    </form>-->
+
+<!--    <form th:action="@{/profile/learn/search}" th:if="${card1 != null}" th:method="post">-->
+<!--        <table class="test">-->
+<!--            <tr class="align">-->
+<!--                <td class="list-item" th:if="${card1 != null}">-->
+<!--&lt;!&ndash;                    <form method="post" th:object="${card1}">&ndash;&gt;-->
+<!--                        <figure class="cards" type="submit">-->
+<!--                            <img  th:src="*{card1.image}" name="image" class="images">-->
+<!--                            <figcaption th:text="*{card1.tat}" name="tat" class="words"></figcaption>-->
+<!--    &lt;!&ndash;                        <input hidden name="image" th:field="*{image}" class="words"/>&ndash;&gt;-->
+<!--    &lt;!&ndash;                        <input hidden name="tat" th:field="*{tat}" class="words"/>&ndash;&gt;-->
+<!--    &lt;!&ndash;                        <input hidden name="tag" th:field="*{tag}" class="words"/>&ndash;&gt;-->
+<!--                            <input th:field="*{card1.rus}" name="rus" class="words"/>-->
+<!--                        </figure>-->
+<!--&lt;!&ndash;                    </form>&ndash;&gt;-->
+<!--                </td>-->
+<!--                <td class="list-item" th:if="${card2 != null}">-->
+<!--&lt;!&ndash;                    <form method="post" th:object="${card2}">&ndash;&gt;-->
+<!--                        <figure th:object="${card2}" class="cards" type="submit">-->
+<!--                            <img  th:src="*{image}" name="image" class="images">-->
+<!--                            <figcaption th:text="*{tat}" name="tat" class="words"></figcaption>-->
+<!--    &lt;!&ndash;                        <input hidden name="image" th:field="*{image}" class="words"/>&ndash;&gt;-->
+<!--    &lt;!&ndash;                        <input hidden name="tat" th:field="*{tat}" class="words"/>&ndash;&gt;-->
+<!--    &lt;!&ndash;                        <input hidden name="tag" th:field="*{tag}" class="words"/>&ndash;&gt;-->
+<!--                            <input th:field="*{rus}"  name="rus" class="words"/>-->
+<!--                        </figure>-->
+<!--&lt;!&ndash;                    </form>&ndash;&gt;-->
+<!--                </td>-->
+<!--                <td class="list-item" th:if="${card3 != null}">-->
+<!--&lt;!&ndash;                    <form method="post" th:object="${card3}">&ndash;&gt;-->
+<!--                        <figure th:object="${card3}" class="cards" type="submit">-->
+<!--                            <img  th:src="*{image}" name="image" class="images">-->
+<!--                            <figcaption th:text="*{tat}" name="tat" class="words"></figcaption>-->
+<!--    &lt;!&ndash;                        <input hidden name="image" th:field="*{image}" class="words"/>&ndash;&gt;-->
+<!--    &lt;!&ndash;                        <input hidden name="tat" th:field="*{tat}" class="words"/>&ndash;&gt;-->
+<!--    &lt;!&ndash;                        <input hidden name="tag" th:field="*{tag}" class="words"/>&ndash;&gt;-->
+<!--                            <input th:field="*{rus}"  name="rus" class="words"/>-->
+<!--                        </figure>-->
+<!--&lt;!&ndash;                    </form>&ndash;&gt;-->
+<!--                </td>-->
+<!--                <td class="list-item" th:if="${card4 != null}">-->
+<!--&lt;!&ndash;                    <form method="post" th:object="${card4}">&ndash;&gt;-->
+<!--                        <figure th:object="${card4}" class="cards" type="submit">-->
+<!--                            <img  th:src="*{image}" name="image" class="images">-->
+<!--                            <figcaption th:text="*{tat}" name="tat" class="words"></figcaption>-->
+<!--    &lt;!&ndash;                        <input hidden name="image" th:field="*{image}" class="words"/>&ndash;&gt;-->
+<!--    &lt;!&ndash;                        <input hidden name="tat" th:field="*{tat}" class="words"/>&ndash;&gt;-->
+<!--    &lt;!&ndash;                        <input hidden name="tag" th:field="*{tag}" class="words"/>&ndash;&gt;-->
+<!--    &lt;!&ndash;                        <input hidden name="isGlobal" th:field="*{isGlobal}" class="words"/>&ndash;&gt;-->
+<!--                            <input th:field="*{rus}" name="rus" class="words"/>-->
+<!--                        </figure>-->
+<!--&lt;!&ndash;                    </form>&ndash;&gt;-->
+<!--                </td>-->
+<!--            </tr>-->
+<!--        </table>-->
+<!--        <button type="submit">Проверить</button>-->
+<!--    </form>-->
+    <form th:action="@{/profile/learn}" th:if="${card1 != null}" th:method="post">
+        <table class="test">
+            <tr class="align">
+                <td class="list-item" th:if="${card1 != null}">
+                    <figure class="cards" th:if="${isTrue1}" type="submit">
+                        <img th:src="*{card1.image}" name="image" class="images">
+                        <figcaption th:text="*{card1.tat}" name="tat" class="words"></figcaption>
+                        <input th:if="${isDone} == false" name="rus1" class="words"/>
+                        <figcaption th:if="${isDone}" th:text="*{card1.rus}" name="rus" class="words"></figcaption>
+                    </figure>
+                    <figure class="cards" th:if="${isTrue1} == false" style="background-color: red" type="submit">
+                        <img th:src="*{card1.image}" name="image" class="images">
+                        <figcaption th:text="*{card1.tat}" name="tat" class="words"></figcaption>
+                        <figcaption th:text="*{card1.rus}" name="rus" class="words"></figcaption>
+                    </figure>
+                </td>
+                <td class="list-item" th:if="${card2 != null}">
+                    <figure class="cards" th:if="${isTrue2}" type="submit">
+                        <img th:src="*{card2.image}" name="image" class="images">
+                        <figcaption th:text="*{card2.tat}" name="tat" class="words"></figcaption>
+                        <input th:if="${isDone} == false" name="rus2" class="words"/>
+                        <figcaption th:if="${isDone}" th:text="*{card2.rus}" name="rus" class="words"></figcaption>
+                    </figure>
+                    <figure class="cards" th:if="${isTrue2} == false" style="background-color: red" type="submit">
+                        <img th:src="*{card2.image}" name="image" class="images">
+                        <figcaption th:text="*{card2.tat}" name="tat" class="words"></figcaption>
+                        <figcaption th:text="*{card2.rus}" name="rus" class="words"></figcaption>
+                    </figure>
+                </td>
+                <td class="list-item" th:if="${card3 != null}">
+                    <figure class="cards" th:if="${isTrue3} == true" type="submit">
+                        <img th:src="*{card3.image}" name="image" class="images">
+                        <figcaption th:text="*{card3.tat}" name="tat" class="words"></figcaption>
+                        <input th:if="${isDone} == false" name="rus3" class="words"/>
+                        <figcaption th:if="${isDone}" th:text="*{card3.rus}" name="rus" class="words"></figcaption>
+                    </figure>
+                    <figure class="cards" th:if="${isTrue3} == false" style="background-color: red" type="submit">
+                        <img th:src="*{card3.image}" name="image" class="images">
+                        <figcaption th:text="*{card3.tat}" name="tat" class="words"></figcaption>
+                        <figcaption th:text="*{card3.rus}" name="rus" class="words"></figcaption>
+                    </figure>
+                </td>
+                <td class="list-item" th:if="${card4 != null}">
+                    <figure class="cards" th:if="${isTrue4} == true" type="submit">
+                        <img th:src="*{card4.image}" name="image" class="images">
+                        <figcaption th:text="*{card4.tat}" name="tat" class="words"></figcaption>
+                        <input th:if="${isDone} == false" name="rus4" class="words"/>
+                        <figcaption th:if="${isDone}" th:text="*{card4.rus}" name="rus" class="words"></figcaption>
+                    </figure>
+                    <figure class="cards" th:if="${isTrue4} == false" style="background-color: red" type="submit">
+                        <img th:src="*{card4.image}" name="image" class="images">
+                        <figcaption th:text="*{card4.tat}" name="tat" class="words"></figcaption>
+                        <figcaption th:text="*{card4.rus}" name="rus" class="words"></figcaption>
+                    </figure>
+                </td>
+            </tr>
+        </table>
+        <button th:if="${isDone} == false" type="submit" class="btn_style" style="margin: auto auto auto 30em; padding: auto auto auto 30em;">Проверить</button>
+    </form>
+    <form th:if="${isDone}" th:action="@{/profile/learn/exit}" th:method="get">
+        <button type="submit" class="btn_style" style="margin: auto auto auto 30em; padding: auto auto auto 30em;">Завершить</button>
+    </form>
+        <!--    <form th:action="@{/profile/learn/search}" th:if="${card1 != null}" th:method="post">-->
+<!--        <table class="test">-->
+<!--            <tr class="align">-->
+<!--                <td class="list-item" th:if="${card1 != null}">-->
+<!--                    <figure class="cards" type="submit">-->
+<!--                        <img th:src="*{card1.image}" name="image" class="images">-->
+<!--                        <figcaption th:text="*{card1.tat}" name="tat" class="words"></figcaption>-->
+<!--                        <input th:field="*{card1.rus}" id="rus1" class="words"/>-->
+<!--                    </figure>-->
+<!--                </td>-->
+<!--                <td class="list-item" th:if="${card2 != null}">-->
+<!--                    <figure class="cards" type="submit">-->
+<!--                        <img th:src="*{card2.image}" name="image" class="images">-->
+<!--                        <figcaption th:text="*{card2.tat}" name="tat" class="words"></figcaption>-->
+<!--                        <input th:field="*{card2.rus}" id="rus2" class="words"/>-->
+<!--                    </figure>-->
+<!--                </td>-->
+<!--                <td class="list-item" th:if="${card3 != null}">-->
+<!--                    <figure class="cards" type="submit">-->
+<!--                        <img th:src="*{card3.image}" name="image" class="images">-->
+<!--                        <figcaption th:text="*{card3.tat}" name="tat" class="words"></figcaption>-->
+<!--                        <input th:field="*{card3.rus}" id="rus3" class="words"/>-->
+<!--                    </figure>-->
+<!--                </td>-->
+<!--                <td class="list-item" th:if="${card4 != null}">-->
+<!--                    <figure class="cards" type="submit">-->
+<!--                        <img th:src="*{card4.image}" name="image" class="images">-->
+<!--                        <figcaption th:text="*{card4.tat}" name="tat" class="words"></figcaption>-->
+<!--                        <input th:field="*{card4.rus}" id="rus4" class="words"/>-->
+<!--                    </figure>-->
+<!--                </td>-->
+<!--            </tr>-->
+<!--        </table>-->
+<!--        <button type="submit">Проверить</button>-->
+<!--    </form>-->
+
+</div>
+</body>
+</html>

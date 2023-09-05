@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:th="https://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Информация о пользователях</title>
+</head>
+<body>
+    User editor
+    <form th:action="@{/user}" method="post">
+      <input type="text" th:value="${user.login}" name="login"/>
+        <div th:each="el: ${roles}">
+            <input th:text="${el}" type="checkbox" th:value="${el}" th:name="${el}"/>
+        </div>
+        <input type="hidden" th:value="${user.id}" name="user_id">
+        <button type="submit">Save</button>
+    </form>
+</body>
+</html>

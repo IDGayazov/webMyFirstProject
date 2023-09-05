@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Добавление карточки</title>
+    <link rel="stylesheet" href="/admin.css">
+</head>
+<body>
+<div class="header">
+    <ul>
+        <li>
+            <a class="a1" href="#">Главная страница</a>
+        </li>
+    </ul>
+</div>
+
+<h1 style="margin: 1em 1em 1em 2em; font-size: 26px;">Добавление карточки</h1>
+<p style="margin: 2em auto 1em 15em; padding: 2em auto 1em 15em; color: red; font-size:26px;" th:text="${message}"></p>
+<div class="pg">
+    <form th:action="@{/profile/add}" th:object="${card}" th:method="post">
+        <div class="text-holder">
+            <textarea type="text" placeholder="Добавьте текст на татарском языке" class="txt1" th:field="*{tat}" name="tat"></textarea>
+        </div>
+        <hr/>
+        <div th:if="${#fields.hasErrors('tat')}" th:errors="*{tat}" style="color: red">
+            Введите корректное наименование
+        </div>
+        <label style="font-size: 20px; font-family: Verdana; color: #bdbdbd;">Наименование</label>
+        <div class="text-holder1">
+            <textarea type="text" placeholder="Добавьте текст на русском языке" class="txt1" th:field="*{rus}" name="rus"></textarea>
+        </div>
+        <hr/>
+        <div>
+            <label th:if="${#fields.hasErrors('rus')}" th:errors="*{rus}" style="color: red;">Введите корректный перевод</label>
+        </div>
+        <label style="font-size: 20px; font-family: Verdana; color: #bdbdbd;">Перевод</label>
+        <div class="text-holder1">
+            <textarea type="text" placeholder="Добавьте ссылку на изображение" class="txt1" th:field="*{image}" name="image"></textarea>
+        </div>
+        <hr/>
+        <div>
+            <label th:if="${#fields.hasErrors('image')}" th:errors="*{image}" style="color: red;">Введите корректный адрес изображения</label>
+        </div>
+        <label style="font-size: 20px; font-family: Verdana; color: #bdbdbd;">Изображение</label>
+        <div class="text-holder1">
+            <textarea type="text" placeholder="Добавьте тег" class="txt1" th:field="*{tag}" name="tag"></textarea>
+        </div>
+        <hr/>
+        <div style="bottom-padding: -2em; margin: 0 0 -1em 0;">
+            <label th:if="${#fields.hasErrors('tag')}" th:errors="*{tag}" style="color: red; bottom-padding: -2em; bottom-margin: -4em;">Введите корректный тег</label>
+        </div>
+        <label style="font-size: 20px; font-family: Verdana; color: #bdbdbd;">Тег</label>
+        <button type="submit" class="btn_style">Добавить</button>
+    </form>
+</div>
+</body>
+</html>
